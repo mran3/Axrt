@@ -20,23 +20,16 @@ class ContentViewModel: ObservableObject {
             //writing
             do {
                 try text.write(to: fileURL, atomically: false, encoding: .utf8)
-            }
-            catch {/* error handling here */}
-            
-            
+            } catch {/* error handling here */}
         }
     }
     
     func readFile(fileURL: URL) {
-        
         //reading
         do {
             loadedText = try String(contentsOf: fileURL, encoding: .utf8)
-            print(loadedText)
-        }
-        catch {/* error handling here */}
+            print(loadedText as Any)
+        } catch {/* error handling here */}
     }
     
-    
 }
-

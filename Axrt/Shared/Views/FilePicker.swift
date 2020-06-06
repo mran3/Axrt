@@ -9,8 +9,7 @@
 import SwiftUI
 struct FilePicker: View {
     @Binding var selectedURL: URL?
-    var success: (URL)->Void
-    
+    var success: (URL) -> Void
     var body: some View {
         VStack {
             if selectedURL != nil {
@@ -34,4 +33,3 @@ struct FilePicker: View {
     }
 
 }
-

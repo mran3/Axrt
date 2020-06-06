@@ -1,0 +1,6 @@
+disabled_rules: # rule identifiers to exclude from running
+    - multiple_closures_with_trailing_closure # SwiftUI encourages this
+    - trailing_whitespace # I don't like all the code without any space between functions
+    
+opt_in_rules:
+    

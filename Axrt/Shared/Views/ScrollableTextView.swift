@@ -15,7 +15,7 @@ class ScrollableTextView: NSScrollView {
 
 struct TextView: NSViewRepresentable {
     @Binding var text: String?
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }

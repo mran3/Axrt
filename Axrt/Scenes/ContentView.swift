@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            FilePicker(selectedURL: $loadedFile){ loadedURL in
+            FilePicker(selectedURL: $loadedFile) { loadedURL in
                 self.viewModel.readFile(fileURL: loadedURL)
             }
             TextView(text: $viewModel.loadedText)
@@ -28,8 +28,6 @@ struct ContentView: View {
     }
 
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
