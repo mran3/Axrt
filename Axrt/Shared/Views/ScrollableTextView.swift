@@ -4,7 +4,7 @@
 //
 //  Created by troquer on 6/5/20.
 //  Copyright © 2020 zourz. All rights reserved.
-//
+//  
 
 import AppKit
 import SwiftUI
@@ -14,7 +14,7 @@ class ScrollableTextView: NSScrollView {
 }
 
 struct TextView: NSViewRepresentable {
-    @Binding var text: String
+    @Binding var text: String?
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -29,7 +29,7 @@ struct TextView: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: ScrollableTextView, context: Context) {
-        nsView.textView.string = text
+        nsView.textView.string = text ?? ""
     }
     
     class Coordinator: NSObject, NSTextViewDelegate {

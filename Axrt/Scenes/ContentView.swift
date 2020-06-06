@@ -10,24 +10,23 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var desiredTextViewHeight: CGFloat?
-    @State private var completeText: String = ""
+//    @State private var completeText: String
     @State var loadedFile: URL?
-    var viewModel: ContentViewModel = ContentViewModel()
+    
+    @ObservedObject var viewModel: ContentViewModel = ContentViewModel()
     
     var body: some View {
         
-        VStack{
-            Spacer()
+        VStack {
             FilePicker(selectedURL: $loadedFile){ loadedURL in
-//                print(loadedURL.absoluteString)
                 self.viewModel.readFile(fileURL: loadedURL)
             }
-            TextView(text: $completeText)
-            Spacer()
+            TextView(text: $viewModel.loadedText)
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         
     }
+
 }
 
 
